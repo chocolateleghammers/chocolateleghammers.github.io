@@ -2,9 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} - {{ site.title }}</title>
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border-radius: 0 !important; /* Never use rounded corners */
+    }
+
+    body {
+      background-color: black;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 40px;
+    }
+
+    /* ASCII Header Styling */
+    ascii {
+      display: block;
+      width: 100%;
+      max-width: 800px;
+      margin: 30px auto 10px;
+      padding: 0 20px;
+    }
+
+    ascii pre {
+      display: flex;
+      justify-content: center;
+      line-height: normal;
+    }
+
+    .terminal-cursor {
+      display: inline-block;
+      width: 1ch;
+      height: 1.1em;
+      background-color: currentColor;
+      margin-left: 8px;
+      vertical-align: text-bottom;
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    /* Navigation Styling */
     nav {
       padding: 10px;
       position: sticky;
@@ -13,35 +63,110 @@
       display: flex;
       justify-content: center;
     }
+
     nav a {
       margin-right: 15px;
       text-decoration: none;
       font-weight: bold;
       color: #f0f0f0;
     }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Outline Main Box (No solid fill, no rounded corners) */
     main {
-      padding: 20px;
+      border: 2px solid #ffffff;
+      width: calc(100% - 40px);
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 30px;
     }
-    body {
-      background-color:black;
-      color: #fff;
+
+    /* Content Styling inside the Outline Box */
+    main h1, main h2, main h3, main h4 {
+      color: #ffffff;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
     }
-    ascii pre {
-	    display: flex;
-	    justify-content: center;
-	    line-height: normal;
+
+    main h1:first-child,
+    main h2:first-child,
+    main h3:first-child {
+      margin-top: 0;
+    }
+
+    main p, main ul, main ol {
+      margin-bottom: 1.25rem;
+      line-height: 1.6;
+    }
+
+    main a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    main a:hover {
+      text-decoration: underline;
+    }
+
+    /* Code inside the box */
+    main code {
+      background-color: #222;
+      padding: 2px 4px;
+      color: #ff79c6;
+    }
+
+    main pre {
+      background-color: #111;
+      border: 1px solid #333;
+      padding: 15px;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+
+    main pre code {
+      background-color: transparent;
+      padding: 0;
+      color: inherit;
+    }
+
+    /* Responsive Video Embeds */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      border: 1px solid #333;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding: 20px 15px;
+        width: calc(100% - 24px);
+      }
     }
   </style>
 </head>
 <body>
   <ascii>
-    <pre>   
+    <pre><span>   
     __  ___      __       _                       _
    /  |/  /___ _/ /______(_)___ ___  ____  ____  (_)_  _______
   / /|_/ / __ `/ __/ ___/ / __ `__ \/ __ \/ __ \/ / / / / ___/
  / /  / / /_/ / /_/ /  / / / / / / / /_/ / / / / / /_/ (__  )
-/_/  /_/\__,_/\__/_/  /_/_/ /_/ /_/\____/_/ /_/_/\__,_/____/
-    </pre>
+/_/  /_/\__,_/\__/_/  /_/_/ /_/ /_/\____/_/ /_/_/\__,_/____/ <span class="terminal-cursor"></span></span></pre>
   </ascii>
   <nav>
     <a href="{{ "/" | relative_url }}">Home</a>

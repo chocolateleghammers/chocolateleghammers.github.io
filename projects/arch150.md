@@ -14,7 +14,13 @@ weeks:
     description: Final boards and renders prepared for critique.
 ---
 {% assign arch_images = site.static_files | where_exp: "file", "file.path contains 'assets/images/arch150/'" %}
-{% assign image_files = arch_images | where_exp: "file", "file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.png' or file.extname == '.gif' or file.extname == '.webp' or file.extname == '.svg' or file.extname == '.pdf'" %}
+{% assign image_files = "" | split: "," %}
+{% for file in arch_images %}
+  {% assign ext = file.extname | downcase %}
+  {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.gif' or ext == '.webp' or ext == '.svg' or ext == '.pdf' %}
+    {% assign image_files = image_files | push: file %}
+  {% endif %}
+{% endfor %}
 {% assign image_files = image_files | sort: "path" %}
 
 <style>
