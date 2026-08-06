@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-# Welcome hgsx!
+# Welcome!
 
 I'm a multi-disciplinary artist and developer.
 
