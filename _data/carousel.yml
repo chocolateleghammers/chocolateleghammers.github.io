@@ -1,0 +1,15 @@
+# Add, remove, or reorder photo items in this list.
+# Place your image files in: assets/images/carousel/
+
+- image: "/assets/images/carousel/photo1.png"
+  alt: "Studio & Audio Workspace"
+  #title: "Audio & Tech Workspace"
+  caption: "Digital sound production and development desk"
+
+- image: "/assets/images/carousel/photo2.jpg"
+  alt: "Architectural Wireframe Model"
+  caption: "Drafting and 3D spatial exploration"
+
+- image: "/assets/images/carousel/photo3.png"
+  alt: "Virtual Environment Scene"
+  caption: "Interactive 3D environment design"
