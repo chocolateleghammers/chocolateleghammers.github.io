@@ -123,7 +123,7 @@ weeks:
 
 # ARCH 150 - UMD
 <div class="arch150-intro">
-  <p>This is an explanation of how this was created, including a timeline.</p>
+  <p>3 week architecture project at UMD over summer 2025. We began with a piece of abstract Russian art, turned it into a pavillion to go on the campus, and then created multiple views, perspectives, and site plans of the pavillion. The final goal was to have a comprehensive plan for our pavillion and be able to elaborate on the benefits of our placement.</p>
 </div>
 
 {% for week in page.weeks %}
