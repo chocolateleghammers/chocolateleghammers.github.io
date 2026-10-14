@@ -2,14 +2,19 @@
 # Place your image files in: assets/images/carousel/
 
 - image: "/assets/images/carousel/photo1.png"
-  alt: "Studio & Audio Workspace"
+  alt: "impossiblesomething single cover"
   #title: "Audio & Tech Workspace"
-  caption: "Digital sound production and development desk"
+  caption: "cover for 1/20/25 (impossiblesomething)"
 
-- image: "/assets/images/carousel/photo2.jpg"
-  alt: "Architectural Wireframe Model"
-  caption: "Drafting and 3D spatial exploration"
+- image: "/assets/images/carousel/photo2.JPG"
+  alt: "'Split Rocker' by Jeff Koons"
+  caption: "glenstone sculpture garden - split rocker by jeff koons"
 
 - image: "/assets/images/carousel/photo3.png"
-  alt: "Virtual Environment Scene"
-  caption: "Interactive 3D environment design"
+  alt: "scene of Quietwood, NH"
+  caption: "roblox studio work - quietwood"
+
+- image: "/assets/images/carousel/photo4.JPG"
+  alt: "'Hirshhorn' by Rashid Johnson"
+  caption: "photography at the hirshhorn, hirshhorn by rashid johnson"
+

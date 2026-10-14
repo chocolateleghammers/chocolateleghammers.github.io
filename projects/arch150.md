@@ -12,6 +12,9 @@ weeks:
   - slug: week3
     title: Week 3 – Final Presentation
     description: Final boards and renders prepared for critique.
+# Add custom captions here matching the image filename:
+captions: {
+}
 ---
 {% assign arch_images = site.static_files | where_exp: "file", "file.path contains 'assets/images/arch150/'" %}
 {% assign image_files = "" | split: "," %}
@@ -97,12 +100,30 @@ weeks:
   display: flex;
 }
 
+.lightbox__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  max-width: 90vw;
+  max-height: 90vh;
+  cursor: default;
+}
+
 .lightbox img {
   max-width: 90vw;
-  max-height: 85vh;
-  border-radius: 12px;
+  max-height: 80vh;
   box-shadow: 0 16px 40px rgba(0,0,0,0.45);
-  cursor: default;
+  display: block;
+}
+
+.lightbox__caption {
+  margin: 10px 0 0 0;
+  font-size: 0.85rem;
+  color: #cccccc;
+  line-height: 1.4;
+  font-family: monospace, monospace;
+  text-align: center;
 }
 
 .lightbox__close {
@@ -145,9 +166,13 @@ weeks:
           <a class="gallery-thumb" href="#{{ lightbox_id }}">
             <img src="{{ image.path | relative_url }}" alt="{{ alt_text }}">
           </a>
+          {% assign caption = page.captions[image.name] | default: page.captions[image.basename] | default: "Sample" %}
           <div class="lightbox" id="{{ lightbox_id }}">
             <a class="lightbox__close" href="#gallery-close" aria-label="Close">&times;</a>
-            <img src="{{ image.path | relative_url }}" alt="{{ alt_text }}">
+            <div class="lightbox__content">
+              <img src="{{ image.path | relative_url }}" alt="{{ alt_text }}">
+              <p class="lightbox__caption">{{ caption }}</p>
+            </div>
           </div>
         {% endfor %}
       </div>

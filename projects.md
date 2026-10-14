@@ -8,7 +8,7 @@ permalink: /projects/
 
 ### Ongoing
 
-- [**Quietwood, NH**] - roblox studio build, 2024-ongoing
+- [**Quietwood, NH**](quietwood) - roblox studio build, 2024-ongoing
 - [**tower of same day shipping**] - roblox studio build, 2024-ongoing
 - [**Jekyll Portfolio**] – this site!
 
